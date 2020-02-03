@@ -6,3 +6,5 @@ npm run dev
 to start the front-end side use
 cd front-end
 npm start
+
+next steps are to move the server to the cloud (Cloud MongoDB), and build the application for the web, for the live preview.
