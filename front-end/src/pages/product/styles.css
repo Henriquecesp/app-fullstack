@@ -1,22 +1,42 @@
-.product-info { 
-    max-width: 700px;
-    margin: 20px auto 0;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+.product-info {
+  max-width: 700px;
+  margin: 20px auto 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
 .product-info h1 {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .product-info p {
-    color: #666;
-    line-height: 24px;
-    margin-top: 5px;
+  color: #666;
+  line-height: 24px;
+  margin-top: 5px;
 }
 
 .product-info p a {
-    color: dodgerblue;
+  color: dodgerblue;
+}
+
+.product-info article a {
+  height: 42px;
+  border-radius: 5px;
+  background: none;
+  margin-top: 10px;
+  color: white;
+  background-color: blueviolet;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.product-info article a:hover {
+  opacity: 0.7;
 }

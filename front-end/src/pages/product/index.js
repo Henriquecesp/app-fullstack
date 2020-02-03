@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import api from "../../services/api";
 import "./styles.css";
 
@@ -23,6 +24,9 @@ export default class Product extends Component {
             {product.url}
           </a>
         </p>
+        <article key={product._id}>
+          <Link to={`/edit/${product._id}`}>Edit</Link>
+        </article>
       </div>
     );
   }

@@ -20,42 +20,42 @@ export default class Post extends Component {
     };
   }
 
-  onChangeProductTitle(e) {
+  onChangeProductTitle = e => {
     this.setState({ title: e.target.value });
-  }
+  };
 
-  onChangeProductDescription(e) {
+  onChangeProductDescription = e => {
     this.setState({ description: e.target.value });
-  }
+  };
 
-  onChangeProductUrl(e) {
+  onChangeProductUrl = e => {
     this.setState({ url: e.target.value });
-  }
+  };
 
   onSubmit(e) {
     e.preventDefault();
-
-    const productObject = {
+    const data = {
       title: this.state.title,
       description: this.state.description,
       url: this.state.url
     };
 
     axios
-      .post("http://localhost:3001/api/products", productObject)
-      .then(res => {
-        console.log(res.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+      .post("http://localhost:3001/api/products", data)
+      .then(res => console.log(res.data))
+      .catch(error => console.log(error));
 
     this.setState({ title: "", description: "", url: "" });
+    alert("Created");
+    if (window.confirm("Continue to home page ?")) {
+      window.location = "/";
+    }
   }
   //--------------------------------------------------------------------------------------------
   render() {
     return (
       <div className='product-post'>
+        <h1>Create new</h1>
         <form onSubmit={this.onSubmit}>
           <label>
             Title
@@ -84,13 +84,13 @@ export default class Post extends Component {
             <br />
             <input
               type='url'
-              placeholder='URL of the item'
+              placeholder='http:// URL of the item'
               value={this.state.url}
               onChange={this.onChangeProductUrl}
             />
           </label>
           <br />
-          <input type='submit' value='Create Product' />
+          <input type='submit' value='Create' />
         </form>
       </div>
     );

@@ -49,15 +49,15 @@ export default class Main extends Component {
             <strong>{product.title}</strong>
             <p>{product.description}</p>
 
-            <Link to={`/product/${product._id}`}>Acessar</Link>
+            <Link to={`/product/${product._id}`}>View</Link>
           </article>
         ))}
         <div className='actions'>
           <button disabled={page === 1} onClick={this.prevPage}>
-            Anterior
+            Prev
           </button>
           <button disabled={page === productInfo.pages} onClick={this.nextPage}>
-            Proximo
+            Next
           </button>
         </div>
       </div>

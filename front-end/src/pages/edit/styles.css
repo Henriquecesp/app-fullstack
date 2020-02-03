@@ -1,4 +1,4 @@
-.product-post {
+.product-edit {
   max-width: 700px;
   margin: 20px auto 0;
   padding: 20px;
@@ -7,12 +7,12 @@
   border: 1px solid #ddd;
 }
 
-.product-post h1 {
+.product-edit h1 {
   text-align: center;
   text-transform: capitalize;
 }
 
-.product-post input[type="text"],
+.product-edit input[type="text"],
 input[type="url"] {
   width: 100%;
   padding: 12px 20px;
@@ -23,13 +23,12 @@ input[type="url"] {
   box-sizing: border-box;
 }
 
-.product-post label {
+.product-edit label {
   font-size: 20px;
 }
 
-.product-post input[type="submit"] {
+.product-edit input[type="submit"] {
   width: 100%;
-  background-color: blueviolet;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -39,6 +38,14 @@ input[type="url"] {
   font-size: 16px;
 }
 
-.product-post input[type="submit"]:hover {
+.product-edit input[type="submit"]:hover {
   opacity: 0.7;
+}
+
+.product-edit .submit {
+  background-color: blueviolet;
+}
+
+.product-edit .delete {
+  background-color: red;
 }
