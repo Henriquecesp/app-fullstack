@@ -1,0 +1,8 @@
+to start the back-end side use:
+cd back-end
+npm run dev
+(must have mongodb, I used docker with mongodb)
+
+to start the front-end side use
+cd front-end
+npm start
