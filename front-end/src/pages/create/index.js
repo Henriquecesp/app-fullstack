@@ -45,7 +45,7 @@ export default class Post extends Component {
 
     axios
       .post("http://localhost:3001/api/products", data)
-      .then(res => console.log("Created"))
+      .then(res => console.log("Created", res.data))
       .catch(error => console.log(error));
 
     this.setState({ title: "", description: "", url: "" });

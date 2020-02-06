@@ -46,18 +46,16 @@ export default class Edit extends Component {
     const { id } = this.props.match.params;
     axios
       .put(`http://localhost:3001/api/products/${id}`, data)
-      .then(res => console.log(res.data))
+      .then(res => console.log("Edit finished", res.data))
       .catch(error => console.log(error));
-    if (window.confirm("Edit finished")) {
-      window.location = "/";
-    }
+    window.location = "/";
   };
   onSubmitDelete = e => {
     const { id } = this.props.match.params;
     console.log(id);
     axios.delete(`http://localhost:3001/api/products/${id}`);
     if (window.confirm("Delete ?")) {
-      window.location = "";
+      window.location = "/";
     }
   };
   componentWillUnmount() {
