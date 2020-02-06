@@ -6,6 +6,7 @@ export default class Post extends Component {
   constructor(props) {
     super(props);
 
+    //bind the (this) to each method
     this.onChangeProductTitle = this.onChangeProductTitle.bind(this);
     this.onChangeProductDescription = this.onChangeProductDescription.bind(
       this
@@ -13,6 +14,7 @@ export default class Post extends Component {
     this.onChangeProductUrl = this.onChangeProductUrl.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
+    //initial state of the component
     this.state = {
       title: "",
       description: "",
@@ -20,6 +22,7 @@ export default class Post extends Component {
     };
   }
 
+  //methods
   onChangeProductTitle = e => {
     this.setState({ title: e.target.value });
   };
@@ -42,14 +45,11 @@ export default class Post extends Component {
 
     axios
       .post("http://localhost:3001/api/products", data)
-      .then(res => console.log(res.data))
+      .then(res => console.log("Created"))
       .catch(error => console.log(error));
 
     this.setState({ title: "", description: "", url: "" });
-    alert("Created");
-    if (window.confirm("Continue to home page ?")) {
-      window.location = "/";
-    }
+    window.location = "/";
   }
   //--------------------------------------------------------------------------------------------
   render() {

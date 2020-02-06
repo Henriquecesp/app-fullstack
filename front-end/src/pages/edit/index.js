@@ -7,6 +7,7 @@ export default class Edit extends Component {
   constructor(props) {
     super(props);
 
+    //bind the (this) to each method
     this.onChangeProductTitle = this.onChangeProductTitle.bind(this);
     this.onChangeProductDescription = this.onChangeProductDescription.bind(
       this
@@ -14,6 +15,7 @@ export default class Edit extends Component {
     this.onChangeProductUrl = this.onChangeProductUrl.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
+    //initial state of the component
     this.state = {
       product: {},
       title: "",
