@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./styles.css";
+import api from "../../services/api";
 
 export default class Post extends Component {
   constructor(props) {
@@ -43,8 +43,8 @@ export default class Post extends Component {
       url: this.state.url
     };
 
-    axios
-      .post("http://localhost:3001/api/products", data)
+    api
+      .post("/products", data)
       .then(res => console.log("Created", res.data))
       .catch(error => console.log(error));
 

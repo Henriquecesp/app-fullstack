@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import api from "../../services/api";
-import axios from "axios";
 import "./styles.css";
 
 export default class Edit extends Component {
@@ -44,8 +43,8 @@ export default class Edit extends Component {
       url: this.state.url
     };
     const { id } = this.props.match.params;
-    axios
-      .put(`http://localhost:3001/api/products/${id}`, data)
+    api
+      .put(`/products/${id}`, data)
       .then(res => console.log("Edit finished", res.data))
       .catch(error => console.log(error));
     window.location = "/";
@@ -53,7 +52,7 @@ export default class Edit extends Component {
   onSubmitDelete = e => {
     const { id } = this.props.match.params;
     console.log(id);
-    axios.delete(`http://localhost:3001/api/products/${id}`);
+    api.delete(`/products/${id}`);
     if (window.confirm("Delete ?")) {
       window.location = "/";
     }
