@@ -51,10 +51,8 @@ export default class Edit extends Component {
   };
   onSubmitDelete = e => {
     const { id } = this.props.match.params;
-    console.log(id);
-    api.delete(`/products/${id}`);
     if (window.confirm("Delete ?")) {
-      window.location = "/";
+      api.delete(`/products/${id}`);
     }
   };
   componentWillUnmount() {
