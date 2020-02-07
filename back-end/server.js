@@ -11,8 +11,8 @@ const port = 3001;
 app.use(express.json());
 app.use(cors());
 
-//init db
-const uri = "mongodb://localhost:27017/nodeapi";
+//init db 
+const uri = "mongodb+srv://teste:usuarioteste@apirest-o5m9b.gcp.mongodb.net/test?retryWrites=true&w=majority";
 // const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, {
   useNewUrlParser: true,
