@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import api from "../../services/api";
-import "./styles.css";
+import "./stylesedit.css";
 
 export default class Edit extends Component {
   constructor(props) {
