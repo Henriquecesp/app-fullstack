@@ -4,6 +4,7 @@ import "./styles.css";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 // The `withStyles()` higher-order component is injecting a `classes`
 // prop that is used by the `Button` component.
@@ -22,12 +23,17 @@ const StyledButton = withStyles({
     textTransform: "capitalize"
   }
 })(Button);
-
+const StyledLoading = withStyles({
+  root: {
+    color: "#FE6B8B"
+  }
+})(CircularProgress);
 export default class Main extends Component {
   state = {
     products: [],
     productInfo: {},
-    page: 1
+    page: 1,
+    loading: true
   };
 
   componentDidMount() {
@@ -38,7 +44,7 @@ export default class Main extends Component {
 
     const { docs, ...productInfo } = response.data;
 
-    this.setState({ products: docs, productInfo, page });
+    this.setState({ loading: false, products: docs, productInfo, page });
   };
 
   prevPage = () => {
@@ -61,21 +67,29 @@ export default class Main extends Component {
   };
 
   render() {
-    const { products, page, productInfo } = this.state;
+    const { products, page, productInfo, loading } = this.state;
     return (
       <div className='product-list'>
-        {products.map(product => (
-          <article key={product._id}>
-            <strong>{product.title}</strong>
-            <p>{product.description}</p>
+        {loading ? (
+          <div className='loading-container'>
+            <article>
+              <StyledLoading />
+            </article>
+          </div>
+        ) : (
+          products.map(product => (
+            <article key={product._id}>
+              <strong>{product.title}</strong>
+              <p>{product.description}</p>
 
-            <Link to={`/product/${product._id}`}>
-              <StyledButton variant='contained' color='primary'>
-                View
-              </StyledButton>
-            </Link>
-          </article>
-        ))}
+              <Link to={`/product/${product._id}`}>
+                <StyledButton variant='contained' color='primary'>
+                  View
+                </StyledButton>
+              </Link>
+            </article>
+          ))
+        )}
         <div className='actions'>
           <StyledButton
             disabled={page === 1}
