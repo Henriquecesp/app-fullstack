@@ -1,10 +1,5 @@
-to start the back-end side use:
-cd back-end
-npm run dev
-(must have mongodb, I used docker with mongodb)
+Back-End API Heroku
+https://minha-api-rest.herokuapp.com/api/products
 
-to start the front-end side use
-cd front-end
-npm start
-
-next steps are to move the server to the cloud (Cloud MongoDB), and build the application for the web, live preview.
+Front-End code Sandbox
+https://codesandbox.io/s/github/Henriquecesp/app-fullstack/tree/master/front-end
